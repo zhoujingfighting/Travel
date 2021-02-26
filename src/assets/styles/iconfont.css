@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont/iconfont.eot?t=1614260838254'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1614260838254#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANgAAsAAAAAB2AAAAMUAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqCGIIGATYCJAMQCwoABCAFhG0HVBt8BhHVmwHIvhiwm8uuPf8pKS9m4DEr9oyKtsNaWErKzMw3gq+x1313FwJU8cAyClXGh4VHxa2xFbJCVTiQQEJ/+995/+73XopBgAUceDjzAhvQcNsCm2jH769m9y3oJJ2aoNAEJDjCadNRUenXyxsAm2vVs0DCRZhFeeP3PL0vJEulSfNkPPk8l9Nric9vZ7msOajr+ZiACQY01qbICiQwb9BdxMSIT8cJ1Bu2KLaGhAyICjAuEGdzdSlEK6IoUb5WqO5ZWsQziGrTI68BPPHvx19wBoWkKgNT96siKyD9Nf89atttBZSAdD8XolVkLKIQp72eE5DMLMrqi/5uGdWKkPYK7QBO75aUuuqb/vGSTFQD1Eaw4mYzP5oxSfCjmyTxo4ciw8vQ1crcHsCNzxq8PQnRw+Dz6t8u37K/16znOeN9yVxvyXV6UDy7UNZUrk6RK3SnVbfZ1e0DQcVPm7DyV7g2klwRNf4N2Eoi6s36lkFx9X97KAd/fq6aG1VGy/fjspb09IyWtfJJJiNUt1BGdpiTz9XSvtsOtD/wneyY+x1s272JOtQ59qC1Nd99xau9fLYWzISRWR/3mrtdfkHQa+yX9ioBdLnSzmvP6uquddfurDMtXAFQ8etEej46kDCEg/yRWb/gN7bGghnFp7D/WnoBXwuvKjdc8TusK1ArMVv6wqUzG0opB9ZScgWWVL5iYnUqoR7GqQAItPu+h65rNpVQq0sjqTGErNYkrbAWUaXBCqrVWkW9BburG3S4AYlSh3m3DkKrT0iafUbW6gutsL6hSrf/qNYaCPUOcPwtG0yHP2/DGbWgA/MNs02RkF22oviO47vXbMo5+w25zHHo6raZv2FE3mNG+Rh7EQLiFGBwTkPvE2ROC1qpJ5F8bRrqe1NtU1BbFc6oBR2Yb5htikTby7b1+TuO717zSMlC8A25zJ1DV7czaDdNnFXyLq+Uj7EXISBOAQZnEHqfIPcPWtBKPa1I5WsDW9FcTX2+LjxAcVQB2MI3NJlbAKmgZjudyGhOn5VHksok72ylw5rompUC') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1614260838254') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1614260838254') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1614260838254#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e67d";
+}
+
+.icon-arrow-left-bold:before {
+  content: "\e685";
+}
+
+.icon-arrow-down-bold:before {
+  content: "\e686";
+}
+
