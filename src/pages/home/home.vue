@@ -3,22 +3,26 @@
       <home-header></home-header>
       <home-swiper></home-swiper>
       <home-icons></home-icons>
+      <home-recommend></home-recommend>
     </div>
 </template>
 <script>
 import homeHeader from './components/header'
 import homeSwiper from './components/swiper'
 import homeIcons from './components/icons'
+import homeRecommend from './components/recommend'
 //home也将总组件
 export default {
     name : 'home' , 
     components : {
         homeHeader : homeHeader , 
         homeSwiper,
-        homeIcons
+        homeIcons , 
+        homeRecommend
     }
 }
 </script>
 <style scoped>
+
 
 </style>
