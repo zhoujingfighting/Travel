@@ -9,7 +9,7 @@
         <router-link to="/city">
             <!-- 配置路由信息 -->
        <div class="header-right arrow-icon">
-           城市
+           {{ this.city }}
            <span class="iconfont">&#xe686;</span>
         </div>
         </router-link>
@@ -17,9 +17,12 @@
 </template>
 <script>
 export default {
-    name : 'homeHeader'
+    name : 'homeHeader' , 
     //导出去的组件名称
     //别人引用的名称
+    props : {
+        city : String
+    }
 }
 </script>
 <style lang="stylus" scoped>

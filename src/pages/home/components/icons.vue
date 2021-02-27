@@ -1,11 +1,11 @@
 <template>
     <div class="icons">
-        <swiper >
+        <swiper :options="swiperOption">
         <!-- 这个的目的就是最外层的div包裹整个区间 -->
             <swiper-slide v-for="(item,index) of pages" :key="index">
                 <div class="icon" v-for="it of item" :key="it.id">
                     <div class="icon-img">
-                        <img :src="it.imgurl" alt="" class="icon-img-content">
+                        <img :src="it.imgUrl" alt="" class="icon-img-content">
                     </div>
                     <p class="icon-desc">{{ it.desc}}</p>
                 </div>
@@ -17,14 +17,16 @@
 <script>
 export default {
     name : 'homeIcons' , 
+    props: {
+        iconList : Array
+    },
     data(){
         return {
-            iconList : [
-                { id : '0001' , imgurl : "https://s.qunarzz.com/homenode/images/touchheader/piao.png" , desc  :'景点门票'},
-                {id : '0002' , imgurl : "https://s.qunarzz.com/homenode/images/touchheader/piao.png" , desc  :'景点门票'} ,
-            ]
+            swiperOption :{
+                loop : false
+            }
         }
-    } , 
+    },
     computed : {
         pages(){
             const pages = []

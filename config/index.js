@@ -10,8 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      '/api' : {
+        target : 'http://localhost:8080' , 
+        pathRewrite : {
+          '^/api' : '/static/mock'
+        }
+      }
+    },
+    //路径配置-ajax webpack-dev-server,改变配置项文件后需要重启服务器
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
