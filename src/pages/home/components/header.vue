@@ -6,10 +6,13 @@
        <div class="header-input">
            <span class="iconfont">&#xe67d;</span>
            请输入您要去的城市</div>
+        <router-link to="/city">
+            <!-- 配置路由信息 -->
        <div class="header-right arrow-icon">
            城市
            <span class="iconfont">&#xe686;</span>
         </div>
+        </router-link>
     </div>
 </template>
 <script>
@@ -36,6 +39,7 @@ export default {
             width: 1.24rem
             float:right
             text-align :center
+            color:#fff
         .header-input
             text-align :left
             flex: 1

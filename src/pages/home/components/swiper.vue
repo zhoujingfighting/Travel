@@ -1,7 +1,5 @@
 <template>
 <div class="wrapper">
-
-
      <swiper :options="swiperOption">
     <!-- slides -->
     <swiper-slide v-for = "item of swiperList" :key="item.id">
@@ -34,6 +32,7 @@ export default {
 <style lang="stylus" scoped >
     .wrapper >>> .swiper-pagination-bullet-active
         background: #fff;
+        // 小圆点,点击页面上的
     .swiper-img
         width:100%
     .wrapper

@@ -36,7 +36,8 @@
 /* border
  * 因，边框是由伪元素区域遮盖在父级
  * 故，子级若有交互，需要对子级设置
- * 定位 及 z轴
+ * 定位 及 z轴 , 
+   消除1像素差
  */
 .border::before {
     box-sizing: border-box;
