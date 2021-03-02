@@ -2,8 +2,9 @@
 <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :cities ='cities' :hotCities='hotCities'></city-list>
-    <city-alphabet :cities ='cities'></city-alphabet>
+    <city-list :cities ='cities' :hotCities='hotCities' :letter='letter'></city-list>
+    <city-alphabet :cities ='cities' @change="handleletterChange" ></city-alphabet>
+    <!-- 监听子组件的变化 -->
 </div>
 </template>
 <script>
@@ -23,7 +24,9 @@ export default {
     data(){
         return {
             cities:{} , 
-            hotCities : []
+            hotCities : [] , 
+            letter:""
+            //子组件触发事件 , 父组件相应改变 , 然后子组件再相应改变
         }
     },
     methods:{
@@ -39,11 +42,13 @@ export default {
                 this.cities = data.cities
                 this.hotCities = data.hotCities
             }
+        } , 
+        handleletterChange(letter){
+            this.letter = letter
         }
     },
     mounted(){
         this.getCityInfo()
-        
     }
 }
 </script>

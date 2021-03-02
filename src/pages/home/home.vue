@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
       <home-header :city='city'></home-header>
       <!-- 父组件给子组件传值通过属性 -->
       <home-swiper :list='swiperList'></home-swiper>
@@ -58,7 +58,5 @@ export default {
     }
 }
 </script>
-<style scoped>
-
-
+<style scoped lang="stylus">
 </style>
