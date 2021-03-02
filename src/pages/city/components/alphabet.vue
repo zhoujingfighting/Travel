@@ -16,14 +16,22 @@ export default {
     data(){
         return {
             colorArray : {} , 
-            touchStatus : false
-            //当手纸触发的时候
+            touchStatus : false , 
+            //当触屏事件的时候
+            startY : 0,
+            timer : null
+            //节流用
         }
     },
     props : {
         cities :Object
         //父组件传下来的
     } , 
+    updated(){
+        this.startY = this.$refs['A'][0].offsetTop
+    } , 
+    //生命周期函数
+    //move的时候还得节流
     methods:{
         handleletterClick(e){
             this.$emit('change' , e.target.innerText)
@@ -47,18 +55,23 @@ export default {
                 //当你滑动的时候,知道字母在哪儿
                 //算与顶部位置的差值
                 //颜色也应该改一下
-                const startY = this.$refs['A'][0].offsetTop
                 //字母A与顶部的距离
                 // console.log(startY)
-                const touchY = e.touches[0].clientY
+                //触屏事件节流
+                if(this.timer){
+                    clearTimeout(this.timer)
+                }
+                this.timer = setTimeout(() =>{
+                    const touchY = e.touches[0].clientY
                 // console.log(touchY)A
-                const index = Math.floor ( (touchY - startY) / 20 )
+                const index = Math.floor ( (touchY - this.startY) / 20 )
                 // 因为高度是.4rem
                 //字母高度20px
                 if(index >= 0 && index <= this.letters.length){
                     this.$emit('change' , this.letters[index - 4])
                     //向外触发change
                 }
+                } ,16)
             }
         } , 
         handleTouchEnd(){
