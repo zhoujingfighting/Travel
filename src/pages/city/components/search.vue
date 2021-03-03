@@ -5,7 +5,11 @@
         </div>
         <div class="search-content" ref="search" v-show="keyworld">
             <ul>
-                <li class="search-item border-bottom" v-for="(item,index) of list" :key="index"> {{ item.name }}</li>
+                <li class="search-item border-bottom" 
+                v-for="(item,index) of list" 
+                :key="index"
+                @click="handleCityclick(item.name)"
+                > {{ item.name }}</li>
                 <!-- 得实现滚动 -->
                  <li class="search-item border-bottom" v-show="list.length===0">  没有匹配数据 </li>
             </ul>
@@ -15,6 +19,7 @@
 </template>
 <script>
 import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
     name : 'citySearch' , 
     props:{
@@ -51,6 +56,17 @@ export default {
             } , 100)
         }
     },
+        methods:{
+             handleCityclick(city){
+            // this.$store.commit('changeCity' , city )
+            this.changeCity(city)
+            // 派发一个action 
+            //数据少的时候直接用commit
+            this.$router.push('/')
+            //页面跳转与联动
+            },
+             ...mapMutations(['changeCity'])
+        },
     //监听搜索城市的变化
     mounted(){
         this.scroll = new Bscroll(this.$refs.search)

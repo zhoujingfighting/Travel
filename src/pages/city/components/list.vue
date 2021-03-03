@@ -4,18 +4,22 @@
        <div>
            <!-- Bscroll使用时必要得外层div包裹 -->
            <div class="area">
-           <div class="title border-topbottom">当前城市</div>
-           <div class="button-list">
-               <div class="button-wrapper">
-                   <div class="button">北京</div>
+                <div class="title border-topbottom">当前城市</div>
+                <div class="button-list">
+                    <div class="button-wrapper">
+                        <div class="button">{{ this.currentCity}}</div>
+                    </div>
                 </div>
-           </div>
+            </div>  
            <!-- 消除一像素差 border-bottom消除一像素偏差-->
-        </div>
         <div class="area" >
             <div class="title border-topbottom">热门城市</div>
             <div class="button-list">
-                <div class="button-wrapper" v-for="item of hotCities" :key="item.id" >
+                <div class="button-wrapper" 
+                v-for="item of hotCities" 
+                :key="item.id" 
+                @click="handleCityclick(item.name)"
+                >
                     <div class="button">{{ item.name }}</div>
                  </div>
             </div>
@@ -29,16 +33,21 @@
             <div class="title border-topbottom">{{ key }}</div>
             <!-- 不需要滚动 -->
             <div class="item-list">
-                <div class="item border-bottom" v-for="inner of item" :key="inner.id">
+                <div class="item border-bottom" 
+                v-for="inner of item" 
+                :key="inner.id"
+                @click="handleCityclick(inner.name)"
+                >
                     {{ inner.name }}
-                    </div>
+                </div>
            </div>
-       </div>
+       </div>    
        </div>
     </div>
 </template>
 <script>
 import Bscroll from 'better-scroll'
+import  { mapState  , mapMutations} from 'vuex'
 export default {
     name : 'cityList' , 
     props : {
@@ -47,6 +56,17 @@ export default {
         letter : String
         // 接受父组件传下来的值
     },
+    methods:{
+        handleCityclick(city){
+            // this.$store.commit('changeCity' , city )
+            this.changeCity(city)
+            // 派发一个action 
+            //数据少的时候直接用commit
+            this.$router.push('/')
+            //页面跳转与联动
+        },
+        ...mapMutations(['changeCity'])
+    },
     computed:{
         letters(){
             const Letters = []
@@ -54,7 +74,11 @@ export default {
                 Letters.push(i)
             }
             return Letters
-        }
+        } , 
+        ...mapState({
+            currentCity : 'city'
+            //公用数据映射到这里
+        })
     },
     watch:{
         //Bscroll提供的接口

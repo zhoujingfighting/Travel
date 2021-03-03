@@ -4,7 +4,7 @@
         :ref="item"
         @click='handleletterClick'
         @touchstart = 'handleTouchStart'
-        @touchmove = 'handleTouchMove'
+        @touchmove= 'handleTouchMove'
         @touchend = 'handleTouchEnd'
         >{{ item }}</li>
         <!-- 兄弟组件的传值 ,子组件触发事件 ,触发start然后才能出发move-->
@@ -35,22 +35,22 @@ export default {
     methods:{
         handleletterClick(e){
             this.$emit('change' , e.target.innerText)
-            if(!this.colorArray.item){
-                e.target.style = "color:red"
-                this.colorArray.item = e.target
-                this.colorArray.color = 'red'
-            }else{
-                this.colorArray.item.style = "color:''"
-                this.colorArray.item = e.target
-                this.colorArray.color = 'red'
-                this.colorArray.item.style = "color:red"
-            }
+            // if(!this.colorArray.item){
+            //     e.target.style = "color:red"
+            //     this.colorArray.item = e.target
+            //     this.colorArray.color = 'red'
+            // }else{
+            //     this.colorArray.item.style = "color:''"
+            //     this.colorArray.item = e.target
+            //     this.colorArray.color = 'red'
+            //     this.colorArray.item.style = "color:red"
+            // }
         } , 
         handleTouchStart(){
             this.touchStatus = true
         } , 
         handleTouchMove(e){
-            this.colorArray.item.style = "color:''"
+            // this.colorArray.item.style = "color:''"
             if(this.touchStatus){
                 //当你滑动的时候,知道字母在哪儿
                 //算与顶部位置的差值

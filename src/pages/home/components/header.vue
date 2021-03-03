@@ -5,23 +5,26 @@
        </div>
        <div class="header-input">
            <span class="iconfont">&#xe67d;</span>
-           请输入您要去的城市</div>
+           请输入您要去的城市
+        </div>
         <router-link to="/city">
             <!-- 配置路由信息 -->
        <div class="header-right arrow-icon">
-           {{ this.city }}
+           {{ this.city}}
+           <!-- mapstate的作用 -->
            <span class="iconfont">&#xe686;</span>
         </div>
         </router-link>
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
     name : 'homeHeader' , 
     //导出去的组件名称
     //别人引用的名称
-    props : {
-        city : String
+    computed : {
+        ...mapState(['city'])
     }
 }
 </script>
@@ -39,10 +42,14 @@ export default {
                 text-align :center
                 font-size : .4rem
         .header-right
-            width: 1.24rem
             float:right
             text-align :center
-            color:#fff
+            min-width : 1.04rem
+            padding : 0 .1rem
+            color : #fff
+            .iconfont
+                margin-left : -0.04rem
+                font-size:.2rem
         .header-input
             text-align :left
             flex: 1
@@ -54,4 +61,7 @@ export default {
             margin-top : .12rem
             margin-left : .2rem
             padding-left : .2rem
+            border-radius : .1rem
+            
+
 </style>

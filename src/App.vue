@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style>
+.slick-list, .slick-track { touch-action:pan-y; }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
