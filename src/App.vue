@@ -1,7 +1,10 @@
 <template>
   <div id="app">
    <!-- 当前路由地址显示的内容 -->
-   <router-view/>
+   <keep-alive>
+     <!-- 每一次获得的结果放进内存中,不去请求ajax请求 , 直接取得缓存数据 -->
+        <router-view/>
+   </keep-alive>
   </div>
 </template>
 
